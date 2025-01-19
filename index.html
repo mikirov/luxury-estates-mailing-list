@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Old Money Luxury Scroll</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Link to your custom style.css (unchanged) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="w-full p-4 bg-white/70 shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <span class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
+        Bulgaria Elite
+      </span>
+      <button
+        onclick="document.getElementById('section2').scrollIntoView({ behavior: 'smooth' })"
+        class="border border-gold px-4 py-2 rounded-md text-lg sm:text-xl md:text-2xl hover:bg-gold hover:text-white transition"
+      >
+        View Properties
+      </button>
+    </div>
+  </nav>
+
+  <!-- MAIN SNAP CONTAINER -->
+  <div id="snapContainer">
+
+    <!-- SECTION 1: HERO -->
+    <section class="snapSection" id="section1">
+      <div>
+        <!-- Keep the hero heading large -->
+        <h1 class="shimmer text-3xl sm:text-5xl md:text-6xl font-bold mb-4">
+          Exclusive Investment Deals in Bulgaria
+        </h1>
+        <!-- Paragraph: bigger on mobile, slight fade via text-gray-700/90 -->
+        <p class="text-xl sm:text-2xl md:text-3xl max-w-xl mx-auto mb-6 leading-relaxed text-gray-700/90">
+          Discover luxurious apartments in Europe’s hidden gem:
+          <br class="hidden sm:block" />
+          The cheapest Schengen capital, poised for remarkable growth.
+        </p>
+        <button
+          onclick="document.getElementById('section2').scrollIntoView({ behavior: 'smooth' })"
+          class="border border-gold px-6 py-3 rounded-md text-lg sm:text-xl md:text-2xl hover:bg-gold hover:text-white transition"
+        >
+          Explore Listings
+        </button>
+      </div>
+      <!-- Scroll Cue Arrow -->
+      <div class="scrollCue"
+           onclick="document.getElementById('section2').scrollIntoView({ behavior: 'smooth' })">
+      </div>
+    </section>
+
+    <!-- SECTION 2: FEATURED PROPERTIES -->
+    <section class="snapSection" id="section2">
+      <div>
+        <h2 class="shimmer text-2xl sm:text-4xl md:text-5xl font-semibold mb-6">
+          Featured Luxury Apartments
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8">
+
+          <!-- Property Card 1 -->
+          <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition"
+            onclick="document.getElementById('subscribe').scrollIntoView({ behavior: 'smooth' })" >
+            <a href="1.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="1.png"
+                alt="Luxury Apartment 1"
+                class="mb-4 rounded-md w-full"
+              />
+            </a>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2">
+              Downtown Sofia Oasis
+            </h3>
+            <p class="text-base sm:text-lg md:text-xl text-gray-700/90">
+              2 Bed, 2 Bath, Panoramic City Views
+            </p>
+          </div>
+
+          <!-- Property Card 2 -->
+          <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition"
+            onclick="document.getElementById('subscribe').scrollIntoView({ behavior: 'smooth' })" 
+          >
+            <a href="2.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="2.png"
+                alt="Luxury Apartment 2"
+                class="mb-4 rounded-md w-full"
+
+                onclick="document.getElementById('subscribe').scrollIntoView({ behavior: 'smooth' })"
+              />
+            </a>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2">
+              Modern Business District Condo
+            </h3>
+            <p class="text-base sm:text-lg md:text-xl text-gray-700/90">
+              1 Bed, 1 Bath, Perfect for Corporate Rentals
+            </p>
+          </div>
+
+          <!-- Property Card 3 -->
+          <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition"
+          onclick="document.getElementById('subscribe').scrollIntoView({ behavior: 'smooth' })">
+            <a href="3.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="3.png"
+                alt="Luxury Apartment 3"
+                class="mb-4 rounded-md w-full"
+
+                onclick="document.getElementById('subscribe').scrollIntoView({ behavior: 'smooth' })"
+              />
+            </a>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2">
+              Green Suburban Retreat
+            </h3>
+            <p class="text-base sm:text-lg md:text-xl text-gray-700/90">
+              3 Bed, 2 Bath, Close to Parks & Trails
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Scroll Cue Arrow (optional) -->
+      <div class="scrollCue"
+           onclick="document.getElementById('section3').scrollIntoView({ behavior: 'smooth' })">
+      </div>
+    </section>
+
+    <!-- SECTION 3: WHY INVEST -->
+    <section class="snapSection" id="section3">
+      <div>
+        <h2 class="text-2xl sm:text-4xl md:text-5xl font-semibold mb-4 shimmer">
+          Why Bulgaria?
+        </h2>
+        <!-- Slight fade on paragraphs -->
+        <p class="text-xl sm:text-2xl md:text-3xl max-w-xl mx-auto mb-6 leading-relaxed text-gray-700/90">
+          Did you know that Sofia is considered Europe's cheapest Schengen capital? 
+          With property values rising steadily, a thriving economy, and a remarkably 
+          low cost of living, Bulgaria stands out as the Balkan jewel for profitable 
+          real estate. Experience stable, timeless investments—perfect for anyone 
+          seeking an “old money” approach to building wealth.
+        </p>
+        <button
+          class="bg-gold text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition text-lg sm:text-xl md:text-2xl"
+          onclick="document.getElementById('subscribe').scrollIntoView({ behavior: 'smooth' })"
+        >
+          Learn More
+        </button>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SUBSCRIBE -->
+    <section class="snapSection" id="subscribe">
+      <div>
+        <h2 class="text-2xl sm:text-4xl md:text-5xl font-semibold mb-4 shimmer">
+          Secure Your Next Investment
+        </h2>
+        <p class="text-xl sm:text-2xl md:text-3xl max-w-xl mx-auto mb-8 leading-relaxed text-gray-700/90">
+          Don’t miss out on Bulgaria’s rapidly growing market. Join our VIP list 
+          for exclusive insights and off-market deals in Sofia and beyond.
+        </p>
+        <form class="flex flex-col md:flex-row gap-4 justify-center w-full max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="Your Email Address"
+            required
+            class="px-4 py-2 bg-[#FAF8F5] text-gray-700 border-gold border rounded-md focus:outline-none flex-1 text-lg sm:text-xl md:text-2xl"
+          />
+          <button
+            type="submit"
+            class="border border-gold px-6 py-2 rounded-md hover:bg-gold hover:text-white transition text-lg sm:text-xl md:text-2xl"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+  </div>
+  <!-- END of SNAP CONTAINER -->
+
+  <!-- FOOTER -->
+  <footer class="p-4 bg-white/70 text-center text-base sm:text-lg text-gray-600">
+    <p>&copy; 2025 Bulgaria Elite Investments. All rights reserved.</p>
+  </footer>
+</body>
+</html>
