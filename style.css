@@ -1,0 +1,126 @@
+/* 1) Basic reset & full-height setup */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* 2) Old money palette: cream background & gold accent.
+     We'll define them as CSS variables for convenience. */
+  :root {
+    --cream-bg: #FAF8F5;  /* main background */
+    --text-dark: #3c3c3b; /* typical 'old money' text color */
+    --gold: #b6985e;      /* gold accent */
+  }
+  
+  /* 3) The body has a cream background, dark text, and uses a classic serif font for that 'old money' feel. */
+  body {
+    background-color: var(--cream-bg);
+    color: var(--text-dark);
+    font-family: serif;
+    overflow: hidden; /* we'll rely on a dedicated scroll container */
+  }
+  
+  /* 4) Fullscreen scroll snapping container */
+  #snapContainer {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  
+    /* Hide scrollbar (IE & Firefox) */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+  }
+  #snapContainer::-webkit-scrollbar {
+    width: 0;
+    background: transparent; /* Chrome/Safari scrollbar hidden */
+  }
+  
+  /* 5) Each snap section is full viewport, with some padding. */
+  .snapSection {
+    scroll-snap-align: start;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* 6) Shimmer effect for 'shiny' text. 
+     We'll keep a subtle gradient for an elegant vibe. */
+  .shimmer {
+    position: relative;
+    display: inline-block;
+    color: var(--gold); /* Shimmer text in gold? Or keep dark? Up to you */
+    overflow: hidden;
+  }
+  
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    /* Soft gradient that moves left-to-right */
+    background: linear-gradient(
+      120deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.5) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    transform: translateX(-100%);
+    animation: shimmer 2.5s infinite;
+  }
+  
+  /* Keyframes for shimmer movement */
+  @keyframes shimmer {
+    0%   { transform: translateX(-100%); }
+    50%  { transform: translateX(100%);  }
+    100% { transform: translateX(100%);  }
+  }
+  
+  /* 7) Bouncing arrow scroll cue */
+  .scrollCue {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    animation: bounce 1.5s infinite;
+    cursor: pointer;
+  }
+  .scrollCue::before {
+    content: "";
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid var(--gold); /* arrow color = gold */
+    display: block;
+    width: 0;
+    height: 0;
+    margin: auto;
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, 8px);
+    }
+  }
+  
+  /* 8) Utility: gold border & background if needed */
+  .border-gold {
+    border-color: var(--gold);
+  }
+  .bg-gold {
+    background-color: var(--gold);
+  }
+  .text-gold {
+    color: var(--gold);
+  }
