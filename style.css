@@ -8,38 +8,38 @@ body {
 
 /* 2) Old money palette: cream background & gold accent. */
 :root {
-  --cream-bg: #faf8f5; /* main background */
-  --text-dark: #3c3c3b; /* typical 'old money' text color */
-  --gold: #b6985e; /* gold accent */
+  --cream-bg: #faf8f5; /* Main background */
+  --text-dark: #3c3c3b; /* Typical 'old money' text color */
+  --gold: #b6985e; /* Gold accent */
 }
 
-/* 3) The body has a cream background, dark text, and uses a classic serif font for that 'old money' feel. */
+/* 3) Body styles */
 body {
   background-color: var(--cream-bg);
   color: var(--text-dark);
   font-family: serif;
-  overflow: hidden; /* we'll rely on a dedicated scroll container (desktop) */
+  overflow: hidden; /* Desktop relies on a dedicated scroll container */
 }
 
-/* 4) Fullscreen scroll snapping container (DESKTOP) */
+/* 4) Scroll container (Desktop) */
 #snapContainer {
   height: 100vh;
   width: 100vw;
-  scroll-snap-type: y mandatory; /* desktop snapping */
+  scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
 
-  /* Hide scrollbar (IE & Firefox) */
+  /* Hide scrollbar */
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 #snapContainer::-webkit-scrollbar {
   width: 0;
-  background: transparent; /* Chrome/Safari scrollbar hidden */
 }
 
-/* 5) Each snap section is full viewport by default (desktop) */
-.snapSection {
+/* 5) Snap sections */
+#snapContainer .snapSection {
   scroll-snap-align: start;
   width: 100vw;
   height: 100vh;
@@ -51,7 +51,28 @@ body {
   text-align: center;
 }
 
-/* 6) Shimmer effect for 'shiny' text */
+#snapContainer .snapSection h1,
+#snapContainer .snapSection h2 {
+  color: var(--gold);
+}
+
+#snapContainer .snapSection p {
+  color: var(--text-dark);
+}
+
+#snapContainer .snapSection button {
+  border: 2px solid var(--gold);
+  color: var(--text-dark);
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+#snapContainer .snapSection button:hover {
+  background-color: var(--gold);
+  color: #fff;
+}
+
+/* 6) Shimmer effect */
 .shimmer {
   position: relative;
   display: inline-block;
@@ -74,6 +95,8 @@ body {
   transform: translateX(-100%);
   animation: shimmer 2.5s infinite;
 }
+
+/* Keyframes for shimmer */
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -86,7 +109,7 @@ body {
   }
 }
 
-/* 7) Bouncing arrow scroll cue */
+/* 7) Scroll cue */
 .scrollCue {
   position: absolute;
   bottom: 2rem;
@@ -117,87 +140,55 @@ body {
   }
 }
 
-/* 8) Utility: gold border & background if needed */
-.border-gold {
-  border-color: var(--gold);
-}
-.bg-gold {
-  background-color: var(--gold);
-}
-.text-gold {
-  color: var(--gold);
-}
-
-/* 9) Mobile-Only Larger Fonts (for screens <= 640px) */
+/* 8) Mobile styles */
 @media (max-width: 640px) {
-  /* a) Disable snapping, switch to 1-col grid */
   #snapContainer {
-    scroll-snap-type: none; /* no snapping on mobile */
+    scroll-snap-type: none;
     display: grid;
-    grid-template-columns: 1fr; /* single column */
+    grid-template-columns: 1fr;
     gap: 1rem;
     width: 100%;
-    height: auto; /* let content height grow */
-    overflow-y: auto; /* normal scrolling now */
+    height: auto;
+    overflow-y: auto;
   }
-  .snapSection {
+
+  #snapContainer.snapSection {
     scroll-snap-align: none;
     width: 100%;
     height: auto;
-    position: static; /* remove absolute for simpler layout */
-    display: block; /* or flex if you prefer */
+    position: static;
+    display: block;
   }
 
-  /* b) Increase headings in snap sections */
-  .snapSection h1 {
+  /* Hide sections except subscribe */
+  #section1 {
+    display: none !important;
+  }
+  #section2 {
+    display: none !important;
+  }
+  #section3 {
+    display: none !important;
+  }
+
+  /* Adjust text size for mobile */
+  #snapContainer.snapSection h1 {
     font-size: 2.25rem; /* ~36px */
     line-height: 1.2;
   }
-  .snapSection h2 {
+
+  #snapContainer.snapSection h2 {
     font-size: 2rem; /* ~32px */
     line-height: 1.2;
   }
 
-  /* c) Increase paragraph text */
-  .snapSection p {
+  #snapContainer.snapSection p {
     font-size: 1.5rem; /* ~24px */
     line-height: 1.4;
   }
 
-  /* d) Increase button text */
-  .snapSection button {
-    font-size: 1.5rem; /* ~24px */
+  #snapContainer.snapSection button {
+    font-size: 1.5rem;
     padding: 0.75rem 1.5rem;
-  }
-}
-
-/* Fade animation keyframes */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Make sections fade in (when placed on the .fade class) */
-.fade {
-  opacity: 0; /* initial state */
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-/* MOBILE OVERRIDE (<=640px) - Remove snapping, single column style, etc. */
-@media (max-width: 640px) {
-  #snapContainer {
-    scroll-snap-type: none; /* No snapping on mobile */
-    display: block; /* Default block flow */
-    height: auto; /* Let content expand */
-    overflow-y: auto; /* Normal scrolling */
-  }
-  .snapSection {
-    width: 100%;
-    height: auto; /* No forced full screen on mobile */
-    scroll-snap-align: none;
   }
 }

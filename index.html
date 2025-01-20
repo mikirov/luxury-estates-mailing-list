@@ -2,34 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
     <title>Bulgaria Old Money Luxury Properties</title>
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Link to your custom style.css (see updated section below) -->
+    <!-- Link to your custom style.css (see updated div below) -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- NAVBAR -->
-    <!-- <nav class="w-full p-4 bg-white/70 shadow-sm">
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <span class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
-          Old Money Properties
-        </span>
-        <button
-          onclick="document.getElementById('section2').scrollIntoView({ behavior: 'smooth' })"
-          class="border border-gold px-4 py-2 rounded-md text-lg sm:text-xl md:text-2xl hover:bg-gold hover:text-white transition"
-        >
-          View Properties
-        </button>
-      </div>
-    </nav> -->
 
     <!-- MAIN SNAP CONTAINER -->
     <div id="snapContainer">
       <!-- SECTION 1: HERO -->
-      <section class="snapSection fade" id="section1">
+      <div class="snapSection " id="section1">
         <div>
           <h1 class="shimmer text-3xl sm:text-5xl md:text-6xl font-bold mb-4">
             Exclusive Investment Deals in Bulgaria
@@ -53,10 +41,10 @@
           class="scrollCue"
           onclick="document.getElementById('section2').scrollIntoView({ behavior: 'smooth' })"
         ></div>
-      </section>
+      </div>
 
       <!-- SECTION 2: FEATURED PROPERTIES -->
-      <section class="snapSection fade" id="section2">
+      <div class="snapSection " id="section2">
         <div>
           <h2
             class="shimmer text-2xl sm:text-4xl md:text-5xl font-semibold mb-6"
@@ -130,10 +118,10 @@
           class="scrollCue"
           onclick="document.getElementById('section3').scrollIntoView({ behavior: 'smooth' })"
         ></div>
-      </section>
+      </div>
 
       <!-- SECTION 3: WHY INVEST -->
-      <section class="snapSection fade" id="section3">
+      <div class="snapSection " id="section3">
         <div>
           <h2
             class="text-2xl sm:text-4xl md:text-5xl font-semibold mb-4 shimmer"
@@ -157,10 +145,10 @@
             Learn More
           </button>
         </div>
-      </section>
+      </div>
 
       <!-- SECTION 4: SUBSCRIBE -->
-      <section class="snapSection fade" id="subscribe">
+      <div class="snapSection " id="subscribe">
         <div>
           <h2
             class="text-2xl sm:text-4xl md:text-5xl font-semibold mb-4 shimmer"
@@ -196,15 +184,7 @@
             </button>
           </form>
         </div>
-      </section>
+      </div>
     </div>
-    <!-- END of SNAP CONTAINER -->
-
-    <!-- FOOTER -->
-    <!-- <footer
-      class="p-4 bg-white/70 text-center text-base sm:text-lg text-gray-600"
-    >
-      <p>&copy; 2025 Velios EOOD. All rights reserved.</p>
-    </footer> -->
   </body>
 </html>
